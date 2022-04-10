@@ -25,8 +25,8 @@ public class CustomerLoginController {
     }
 
     @GetMapping("/Customers")
-    public void saveUserDetails(@AuthenticationPrincipal OAuth2User user){
-         customerLoginService.saveUserDetails(user);
+    public CustomerInfo saveUserDetails(@AuthenticationPrincipal OAuth2User user){
+        return customerLoginService.saveUserDetails(user);
     }
     @GetMapping("/AllCustomers")
     public List<CustomerInfo> getCustomerDetails(){
